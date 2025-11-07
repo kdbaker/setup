@@ -1,0 +1,30 @@
+[user]
+	name = Kevin Baker
+	email = kevin.baker@improving.com
+
+[color]
+	ui = true
+
+[alias]
+	# branch
+	b = branch
+
+	# switch
+	sw = switch
+
+	# pull
+	pr = pull --rebase
+
+	# status
+	s = -p status # with pagination
+
+	# log - standup
+	standup = log --pretty=format:'%Cgreen(%cr)%Creset %s' --since="yesterday" --author=Kevin
+	standup2 = log --pretty=format:'%Cgreen(%cr)%Creset %s' --since=2.days.ago --author=Kevin
+	weekreview = log --pretty=format:'%Cgreen(%cr)%Creset %s' --since=last.sunday --author=Kevin
+
+	# clean
+	prune = fetch --prune
+
+	# clean branches
+	clean-branches = "!f() { git branch | grep -v \"^*\" | xargs git branch -D; }; f"
